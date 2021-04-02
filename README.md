@@ -3,13 +3,18 @@ Serverless Telegram Node.js bot for searching subtitles from OpenSubtitles.
 
 ![Bot](https://i.imgur.com/zkHn3eg.png)
 
+# Features
+* /search [name, filename or imdbid] - Search subtitles
+* /commands - Command list
+* /help - Help
+* /upload - Link to upload subtitles
+* /about - About
+
+# Prerequisites
+* [Node.js](https://nodejs.org/en/)
+
 # Preview
 [OpenSubtitlesBot](https://t.me/opensubtitlesbot)
-
-# Technologies
-* [Node.js](https://nodejs.org/en/)
-* [Serverless](https://www.cloudflare.com/learning/serverless/what-is-serverless/)
-* [Vercel](https://vercel.com/)
 
 # Running
 ### 1. OpenSubtitles
@@ -62,7 +67,7 @@ curl --location --request POST https://api.telegram.org/bot<YOUR-TELEGRAM-TOKEN>
 # About
 
 ### Authors
-* **Giovani de Oliveira** - [xxgicoxx](https://github.com/xxgicoxx/)
+* [xxgicoxx](https://github.com/xxgicoxx/) - Giovani de Oliveira
 
 ### Acknowledgments
 * [FlatIcon](https://www.flaticon.com/) - Icon

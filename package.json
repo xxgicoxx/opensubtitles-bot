@@ -18,7 +18,8 @@
     "serverless",
     "subtitles",
     "search",
-    "vercel"
+    "vercel",
+    "vercel-serverless"
   ],
   "dependencies": {
     "arg": "^5.0.0",

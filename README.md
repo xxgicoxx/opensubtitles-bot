@@ -14,7 +14,7 @@ Serverless Telegram Node.js bot for searching subtitles from OpenSubtitles.
 * [Node.js](https://nodejs.org/en/)
 
 # Preview
-[OpenSubtitlesBot](https://t.me/opensubtitlesbot)
+[@opensubtitlesbot](https://t.me/opensubtitlesbot)
 
 # Running
 ### 1. OpenSubtitles
@@ -54,6 +54,7 @@ vercel
 
 # Set Vercel environment variables
 TELEGRAM_TOKEN
+TELEGRAM_BOTUSER
 OPENSUBTITLES_USERAGENT
 OPENSUBTITLES_USERNAME
 OPENSUBTITLES_PASSWORD

@@ -65,11 +65,9 @@ OPENSUBTITLES_PASSWORD
 curl --location --request POST https://api.telegram.org/bot<YOUR-TELEGRAM-TOKEN>/setWebhook --header 'Content-type: application/json' --data '{"url": "https://project-name.username.vercel.app/api/webhook"}'
 ````
 
-# About
+# Authors
+* [xxgicoxx](https://github.com/xxgicoxx/)
 
-### Authors
-* [xxgicoxx](https://github.com/xxgicoxx/) - Giovani de Oliveira
-
-### Acknowledgments
-* [FlatIcon](https://www.flaticon.com/) - Icon
-* [OpenSubtitles](https://www.opensubtitles.org/) - Subtitles
+# Acknowledgments
+* [FlatIcon](https://www.flaticon.com/)
+* [OpenSubtitles](https://www.opensubtitles.org/)

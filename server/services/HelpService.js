@@ -1,4 +1,4 @@
-class MessageService {
+class HelpService {
   constructor(bot, id) {
     this.bot = bot;
     this.id = id;
@@ -8,11 +8,11 @@ class MessageService {
     try {
       let message = 'I can help you search subtitles.\n\nYou can control me by sending these commands:\n\n';
 
-      message += '<i>/search {name, filename or imdbid} - search subtitles</i>\n';
-      message += '<i>/commands - command list</i>\n';
-      message += '<i>/help - help</i>\n';
-      message += '<i>/upload - link to upload subtitles</i>\n';
-      message += '<i>/about - about</i>\n';
+      message += '<i>/search {name, filename or imdbid} - Search subtitles</i>\n';
+      message += '<i>/commands - Command list</i>\n';
+      message += '<i>/help - Help</i>\n';
+      message += '<i>/upload - Link to upload subtitles</i>\n';
+      message += '<i>/about - About</i>\n';
 
       await this.bot.sendMessage(this.id, message, { parse_mode: 'HTML' });
     } catch (error) {
@@ -91,4 +91,4 @@ class MessageService {
   }
 }
 
-module.exports = MessageService;
+module.exports = HelpService;

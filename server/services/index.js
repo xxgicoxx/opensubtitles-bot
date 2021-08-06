@@ -1,7 +1,7 @@
-const MessageService = require('./MessageService');
+const HelpService = require('./HelpService');
 const OpenSubtitlesService = require('./OpenSubtitlesService');
 
 module.exports = {
-  MessageService,
+  HelpService,
   OpenSubtitlesService,
 };

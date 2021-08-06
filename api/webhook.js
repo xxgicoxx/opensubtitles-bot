@@ -4,8 +4,8 @@ require('dotenv').config();
 
 const TelegramBot = require('node-telegram-bot-api');
 
-const { telegramConfig } = require('../configs');
-const { BotController } = require('../controllers');
+const { telegramConfig } = require('../server/configs');
+const { BotController } = require('../server/controllers');
 
 module.exports = async (request, response) => {
   try {

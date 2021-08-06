@@ -1,5 +1,5 @@
 # OpenSubtitles Bot
-Serverless Telegram Node.js bot for searching subtitles from OpenSubtitles.
+Serverless Telegram bot for searching subtitles from OpenSubtitles.
 
 ![Bot](https://i.imgur.com/zkHn3eg.png)
 
@@ -20,10 +20,10 @@ Serverless Telegram Node.js bot for searching subtitles from OpenSubtitles.
 ### 1. OpenSubtitles
 ````
 # Create an OpenSubtitles account
-Create an OpenSubtitles account on https://opensubtitles.org/
+Create an OpenSubtitles account on https://opensubtitles.com/
 
-# UserAgent
-Request your own UserAgent https://trac.opensubtitles.org/projects/opensubtitles/wiki/DevReadFirst#Howtorequestanewuseragent. Only for testing and developing purposes you can use special user agent "TemporaryUserAgent". Never use this UA as default/public/in production code, we periodically change this and your APP will stop work! Also don't abuse usage of this test user agent
+# API Key
+You can obtain an api key in the API consumers (https://www.opensubtitles.com/consumers) section of your profile. Create a consumer object that will contain the required api key.
 
 # Credentials
 Save your credentials from OpenSubtitles
@@ -53,8 +53,8 @@ vercel login
 vercel
 
 # Set Vercel environment variables
+TELEGRAM_USERNAME
 TELEGRAM_TOKEN
-TELEGRAM_BOTUSER
 OPENSUBTITLES_USERAGENT
 OPENSUBTITLES_USERNAME
 OPENSUBTITLES_PASSWORD

@@ -17,7 +17,16 @@ Serverless Telegram bot for searching subtitles from OpenSubtitles.
 [@opensubtitlesbot](https://t.me/opensubtitlesbot)
 
 # Running
-### 1. OpenSubtitles
+### 1. Telegram
+````
+# Create an Telegram bot
+Find @BotFather on Telegram, type /newbot and follow the instructions
+
+# Credentials
+Save your token from @BotFather
+````
+
+### 2. OpenSubtitles
 ````
 # Create an OpenSubtitles account
 Create an OpenSubtitles account on https://opensubtitles.com/
@@ -27,15 +36,6 @@ You can obtain an api key in the API consumers (https://www.opensubtitles.com/co
 
 # Credentials
 Save your credentials from OpenSubtitles
-````
-
-### 2. Telegram
-````
-# Create an Telegram bot
-Find @BotFather on Telegram, type /newbot and follow the instructions
-
-# Credentials
-Save your token from @BotFather
 ````
 
 ### 3. Vercel Deploy

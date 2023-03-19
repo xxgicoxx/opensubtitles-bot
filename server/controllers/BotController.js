@@ -1,11 +1,12 @@
 const { telegramConfig } = require('../configs');
+const { constants } = require('../utils');
 
 const {
   HelpService,
   OpenSubtitlesService,
 } = require('../services');
 
-class MessageController {
+class BotController {
   constructor(bot, id, text) {
     this.bot = bot;
     this.id = id;
@@ -14,26 +15,33 @@ class MessageController {
 
   async handle() {
     try {
-      if (this.text === '/start' || this.text === '/commands') {
-        const helpService = new HelpService(this.bot, this.id);
-
-        await helpService.commands(this.bot, this.id);
-      } else if (this.text === '/help') {
-        const helpService = new HelpService(this.bot, this.id);
-
-        await helpService.help(this.bot, this.id);
-      } else if (this.text === '/upload') {
-        const helpService = new HelpService(this.bot, this.id);
-
-        await helpService.upload(this.bot, this.id);
-      } else if (this.text === '/about') {
-        const helpService = new HelpService(this.bot, this.id);
-
-        await helpService.about(this.bot, this.id);
-      } else if (/\/search (.+)/.test(this.text)) {
+      if (constants.COMMAND_SEARCH_REGEX.test(this.text)) {
         const openSubtitlesService = new OpenSubtitlesService(this.bot, this.id, this.text);
 
         await openSubtitlesService.search(this.bot, this.id, this.text);
+
+        return;
+      }
+
+      const helpService = new HelpService(this.bot, this.id);
+
+      switch (this.text) {
+        case constants.COMMAND_START:
+        case constants.COMMAND_COMMANDS:
+        case constants.COMMAND_HELP:
+          await helpService.help(this.bot, this.id);
+
+          break;
+        case constants.COMMAND_UPLOAD:
+          await helpService.upload(this.bot, this.id);
+
+          break;
+        case constants.COMMAND_ABOUT:
+          await helpService.about(this.bot, this.id);
+
+          break;
+        default:
+          break;
       }
     } catch (error) {
       console.error(error);
@@ -41,4 +49,4 @@ class MessageController {
   }
 }
 
-module.exports = MessageController;
+module.exports = BotController;

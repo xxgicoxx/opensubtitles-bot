@@ -10,4 +10,4 @@ const { BotController } = require('./server/controllers');
 const bot = new TelegramBot(telegramConfig.token, { polling: true });
 const botController = new BotController(bot);
 
-botController.handle(false);
+botController.handle();

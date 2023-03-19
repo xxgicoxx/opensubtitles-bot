@@ -2,12 +2,13 @@ const arg = require('arg');
 const Opensubtitlesapi = require('opensubtitles-api');
 
 const { openSubtitlesConfig } = require('../configs');
+const { constants } = require('../utils');
 
 class OpenSubtitlesService {
   constructor(bot, id, text) {
     this.bot = bot;
     this.id = id;
-    this.text = text.replace('/search ', '');
+    this.text = text.replace(`${constants.COMMAND_SEARCH} `, '');
   }
 
   async search() {
@@ -41,26 +42,28 @@ class OpenSubtitlesService {
       const subtitles = response == null ? null : Object.values(response);
 
       if (!subtitles || !subtitles.length) {
-        await this.bot.sendMessage(this.id, 'Subtitle not found');
-      } else {
-        const keyboard = [];
+        await this.bot.sendMessage(this.id, constants.MESSAGE_SUBTITLE_NOT_FOUND);
 
-        subtitles.forEach((e) => {
-          keyboard.push([{ text: `[${e.lang}] - ${e.url}` }]);
-        });
-
-        await this.bot.sendMessage(this.id, 'Select subtitle', {
-          reply_markup: {
-            keyboard,
-            remove_keyboard: true,
-            one_time_keyboard: true,
-          },
-        });
+        return;
       }
+
+      const keyboard = [];
+
+      subtitles.forEach((e) => {
+        keyboard.push([{ text: `[${e.lang}] - ${e.url}` }]);
+      });
+
+      await this.bot.sendMessage(this.id, constants.MESSAGE_SELECT_SUBTITLE, {
+        reply_markup: {
+          keyboard,
+          remove_keyboard: true,
+          one_time_keyboard: true,
+        },
+      });
     } catch (error) {
       console.error(error);
 
-      await this.bot.sendMessage(this.id, 'Error, try again later');
+      await this.bot.sendMessage(this.id, constants.MESSAGE_ERROR_TRY_AGAIN);
     }
   }
 }
